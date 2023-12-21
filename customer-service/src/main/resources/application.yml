@@ -15,7 +15,9 @@ spring:
     username: postgres
     password: admin
     driver-class-name: org.postgresql.Driver
-    platform: postgres
-    data: classpath:init-data.sq
-    schema: classpath:init-schema.sql
-    initialization-mode: always
+  sql:
+    init:
+      platform: postgres
+      data-locations: classpath:init-data.sq
+      schema-locations: classpath:init-schema.sql
+      mode: always

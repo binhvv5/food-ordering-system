@@ -27,11 +27,11 @@ spring:
     username: postgres
     password: admin
     driver-class-name: org.postgresql.Driver
-    platform: postgres
   sql:
     init:
       mode: ALWAYS
       schema-locations: classpath:init-schema.sql
+      platform: postgres
 
 kafka-config:
   bootstrap-servers: localhost:19092, localhost:29092, localhost:39092
