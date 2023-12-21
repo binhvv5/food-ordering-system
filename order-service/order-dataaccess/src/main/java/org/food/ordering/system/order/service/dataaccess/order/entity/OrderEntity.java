@@ -11,12 +11,13 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.UUID;
 
-@Entity
-@Table(name = "orders")
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@Entity
+@Table(name = "orders")
 public class OrderEntity {
     @Id
     private UUID id;
