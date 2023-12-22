@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.food.ordering.system.domain.valueoject.OrderStatus;
+import org.food.ordering.system.domain.valueobject.OrderStatus;
 
 import java.math.BigDecimal;
 import java.util.List;

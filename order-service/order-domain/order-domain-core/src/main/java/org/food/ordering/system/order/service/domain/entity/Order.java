@@ -1,9 +1,8 @@
 package org.food.ordering.system.order.service.domain.entity;
 
 
-import lombok.Builder;
 import org.food.ordering.system.domain.entity.AggregateRoot;
-import org.food.ordering.system.domain.valueoject.*;
+import org.food.ordering.system.domain.valueobject.*;
 import org.food.ordering.system.order.service.domain.exception.OrderDomainException;
 import org.food.ordering.system.order.service.domain.valueobject.OrderItemId;
 import org.food.ordering.system.order.service.domain.valueobject.StreetAddress;

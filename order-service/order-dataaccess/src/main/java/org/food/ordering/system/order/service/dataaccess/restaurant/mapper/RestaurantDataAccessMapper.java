@@ -3,9 +3,9 @@ package org.food.ordering.system.order.service.dataaccess.restaurant.mapper;
 
 import org.food.ordering.system.order.service.dataaccess.restaurant.entity.RestaurantEntity;
 import org.food.ordering.system.order.service.dataaccess.restaurant.exception.RestaurantDataAccessException;
-import org.food.ordering.system.domain.valueoject.Money;
-import org.food.ordering.system.domain.valueoject.ProductId;
-import org.food.ordering.system.domain.valueoject.RestaurantId;
+import org.food.ordering.system.domain.valueobject.Money;
+import org.food.ordering.system.domain.valueobject.ProductId;
+import org.food.ordering.system.domain.valueobject.RestaurantId;
 import org.food.ordering.system.order.service.domain.entity.Product;
 import org.food.ordering.system.order.service.domain.entity.Restaurant;
 import org.springframework.stereotype.Component;

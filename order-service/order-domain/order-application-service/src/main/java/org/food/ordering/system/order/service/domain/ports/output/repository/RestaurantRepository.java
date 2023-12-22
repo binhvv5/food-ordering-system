@@ -1,6 +1,5 @@
 package org.food.ordering.system.order.service.domain.ports.output.repository;
 
-import org.food.ordering.system.domain.valueoject.RestaurantId;
 import org.food.ordering.system.order.service.domain.entity.Restaurant;
 
 import java.util.Optional;

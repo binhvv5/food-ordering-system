@@ -1,6 +1,5 @@
 package org.food.ordering.system.order.service.domain.ports.output.repository;
 
-import org.food.ordering.system.domain.valueoject.OrderId;
 import org.food.ordering.system.order.service.domain.entity.Order;
 import org.food.ordering.system.order.service.domain.valueobject.TrackingId;
 

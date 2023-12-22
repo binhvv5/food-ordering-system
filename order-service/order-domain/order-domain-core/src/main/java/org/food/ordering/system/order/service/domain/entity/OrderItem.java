@@ -1,13 +1,9 @@
 package org.food.ordering.system.order.service.domain.entity;
 
-import lombok.Builder;
-import org.food.ordering.system.domain.entity.AggregateRoot;
 import org.food.ordering.system.domain.entity.BaseEntity;
-import org.food.ordering.system.domain.valueoject.Money;
-import org.food.ordering.system.domain.valueoject.OrderId;
+import org.food.ordering.system.domain.valueobject.Money;
+import org.food.ordering.system.domain.valueobject.OrderId;
 import org.food.ordering.system.order.service.domain.valueobject.OrderItemId;
-
-import java.util.UUID;
 
 public class OrderItem extends BaseEntity<OrderItemId> {
     private OrderId orderId;

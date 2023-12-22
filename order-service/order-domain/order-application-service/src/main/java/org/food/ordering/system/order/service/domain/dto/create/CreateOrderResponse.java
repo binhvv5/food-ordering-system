@@ -4,7 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
-import org.food.ordering.system.domain.valueoject.OrderStatus;
+import org.food.ordering.system.domain.valueobject.OrderStatus;
 
 import java.util.UUID;
 

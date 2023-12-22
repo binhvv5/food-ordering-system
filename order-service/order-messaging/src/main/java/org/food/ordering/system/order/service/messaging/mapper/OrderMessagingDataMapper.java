@@ -2,8 +2,8 @@ package org.food.ordering.system.order.service.messaging.mapper;
 
 
 
-import org.food.ordering.system.domain.valueoject.OrderApprovalStatus;
-import org.food.ordering.system.domain.valueoject.PaymentStatus;
+import org.food.ordering.system.domain.valueobject.OrderApprovalStatus;
+import org.food.ordering.system.domain.valueobject.PaymentStatus;
 import org.food.ordering.system.kafka.order.avro.model.*;
 import org.food.ordering.system.order.service.domain.dto.message.PaymentResponse;
 import org.food.ordering.system.order.service.domain.dto.message.RestaurantApprovalResponse;

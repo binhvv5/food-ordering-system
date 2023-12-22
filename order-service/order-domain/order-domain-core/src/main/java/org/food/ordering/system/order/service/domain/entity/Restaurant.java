@@ -1,8 +1,7 @@
 package org.food.ordering.system.order.service.domain.entity;
 
-import lombok.Builder;
 import org.food.ordering.system.domain.entity.AggregateRoot;
-import org.food.ordering.system.domain.valueoject.RestaurantId;
+import org.food.ordering.system.domain.valueobject.RestaurantId;
 
 import java.util.List;
 

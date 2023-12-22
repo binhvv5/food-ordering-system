@@ -1,9 +1,9 @@
 package org.food.ordering.system.order.service.domain.mapper;
 
-import org.food.ordering.system.domain.valueoject.CustomerId;
-import org.food.ordering.system.domain.valueoject.Money;
-import org.food.ordering.system.domain.valueoject.ProductId;
-import org.food.ordering.system.domain.valueoject.RestaurantId;
+import org.food.ordering.system.domain.valueobject.CustomerId;
+import org.food.ordering.system.domain.valueobject.Money;
+import org.food.ordering.system.domain.valueobject.ProductId;
+import org.food.ordering.system.domain.valueobject.RestaurantId;
 import org.food.ordering.system.order.service.domain.dto.create.CreateOrderCommand;
 import org.food.ordering.system.order.service.domain.dto.create.CreateOrderResponse;
 import org.food.ordering.system.order.service.domain.dto.create.OrderAddress;

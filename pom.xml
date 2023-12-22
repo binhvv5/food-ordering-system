@@ -21,6 +21,7 @@
         <module>common</module>
         <module>infrastructure</module>
         <module>customer-service</module>
+        <module>payment-service</module>
     </modules>
 
     <properties>
@@ -112,6 +113,31 @@
                 <version>${project.version}</version>
             </dependency>
             <!--kafka-->
+
+            <!--payment-->
+            <dependency>
+                <groupId>org.food.ordering.system</groupId>
+                <artifactId>payment-dataaccess</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.food.ordering.system</groupId>
+                <artifactId>payment-domain-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.food.ordering.system</groupId>
+                <artifactId>payment-application-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.food.ordering.system</groupId>
+                <artifactId>payment-messaging</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <!--payment-->
+
+
         </dependencies>
     </dependencyManagement>
     <dependencies>

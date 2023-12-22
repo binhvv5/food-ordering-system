@@ -2,7 +2,7 @@ package org.food.ordering.system.order.service.dataaccess.customer.mapper;
 
 
 import org.food.ordering.system.order.service.dataaccess.customer.entity.CustomerEntity;
-import org.food.ordering.system.domain.valueoject.CustomerId;
+import org.food.ordering.system.domain.valueobject.CustomerId;
 import org.food.ordering.system.order.service.domain.entity.Customer;
 import org.springframework.stereotype.Component;
 
