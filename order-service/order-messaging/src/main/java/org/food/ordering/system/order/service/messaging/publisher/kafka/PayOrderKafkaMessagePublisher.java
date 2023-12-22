@@ -3,6 +3,7 @@ package org.food.ordering.system.order.service.messaging.publisher.kafka;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.food.ordering.system.kafka.order.avro.model.RestaurantApprovalRequestAvroModel;
+import org.food.ordering.system.kafka.producer.KafkaMessageHelper;
 import org.food.ordering.system.kafka.producer.service.KafkaProducer;
 import org.food.ordering.system.order.service.domain.config.OrderServiceConfigData;
 import org.food.ordering.system.order.service.domain.event.OrderPaidEvent;
@@ -17,7 +18,7 @@ public class PayOrderKafkaMessagePublisher implements OrderPaidMessagePublisher 
     private final OrderMessagingDataMapper orderMessagingDataMapper;
     private final OrderServiceConfigData orderServiceConfigData;
     private final KafkaProducer<String, RestaurantApprovalRequestAvroModel> kafkaProducer;
-    private final OrderKafkaMessageHelper orderKafkaMessageHelper;
+    private final KafkaMessageHelper kafkaMessageHelper;
 
     @Override
     public void publish(OrderPaidEvent domainEvent) {
@@ -28,7 +29,7 @@ public class PayOrderKafkaMessagePublisher implements OrderPaidMessagePublisher 
             kafkaProducer.send(orderServiceConfigData.getPaymentRequestTopicName(),
                     orderId,
                     restaurantApprovalRequestAvroModel,
-                    orderKafkaMessageHelper.getKafkaCallBack(orderServiceConfigData.getPaymentRequestTopicName(),
+                    kafkaMessageHelper.getKafkaCallBack(orderServiceConfigData.getPaymentRequestTopicName(),
                             restaurantApprovalRequestAvroModel, orderId, "RestaurantApprovalRequestAvroModel"));
             log.info("RestaurantApprovalRequestAvroModel send to kafka for order id: {}", orderId);
         } catch (Exception e) {
