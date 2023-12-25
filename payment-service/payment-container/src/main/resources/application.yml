@@ -3,7 +3,7 @@ server:
 
 logging:
   level:
-    org.food.ordering.system: DEBUG
+    org.food.ordering.system: INFO
 
 payment-service:
   payment-request-topic-name: payment-request

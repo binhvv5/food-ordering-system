@@ -15,12 +15,12 @@ import org.springframework.stereotype.Component;
 public class OrderCreateCommandHandler {
     private final OrderCreateHelper orderCreateHelper;
     private final OrderDataMapper orderDataMapper;
-//    private final OrderCreatedPaymentMessagePublisher orderCreatedPaymentMessagePublisher;
+    private final OrderCreatedPaymentMessagePublisher orderCreatedPaymentMessagePublisher;
 
     public CreateOrderResponse createOrder(CreateOrderCommand createOrderCommand) {
         OrderCreatedEvent orderCreatedEvent = orderCreateHelper.persistOrder(createOrderCommand);
         log.info("Order is created with id: {}", orderCreatedEvent.getOrder().getId().getValue());
-//        orderCreatedPaymentMessagePublisher.publish(orderCreatedEvent);
+        orderCreatedPaymentMessagePublisher.publish(orderCreatedEvent);
         log.info("Returning CreateOrderResponse with order id: {}", orderCreatedEvent.getOrder().getId());
         return orderDataMapper.orderToCreateOrderResponse(orderCreatedEvent.getOrder(), "Order Created Successfully");
     }

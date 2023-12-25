@@ -24,12 +24,13 @@ public class PayOrderKafkaMessagePublisher implements OrderPaidMessagePublisher 
     public void publish(OrderPaidEvent domainEvent) {
         String orderId = domainEvent.getOrder().getId().getValue().toString();
         try {
+            log.info("RestaurantApprovalRequestAvroModel send to kafka for order id: {}", orderId);
             RestaurantApprovalRequestAvroModel restaurantApprovalRequestAvroModel
                     = orderMessagingDataMapper.orderPaidToRestaurantApprovalRequestAvroModel(domainEvent);
-            kafkaProducer.send(orderServiceConfigData.getPaymentRequestTopicName(),
+            kafkaProducer.send(orderServiceConfigData.getRestaurantApprovalRequestTopicName(),
                     orderId,
                     restaurantApprovalRequestAvroModel,
-                    kafkaMessageHelper.getKafkaCallBack(orderServiceConfigData.getPaymentRequestTopicName(),
+                    kafkaMessageHelper.getKafkaCallBack(orderServiceConfigData.getRestaurantApprovalRequestTopicName(),
                             restaurantApprovalRequestAvroModel, orderId, "RestaurantApprovalRequestAvroModel"));
             log.info("RestaurantApprovalRequestAvroModel send to kafka for order id: {}", orderId);
         } catch (Exception e) {
