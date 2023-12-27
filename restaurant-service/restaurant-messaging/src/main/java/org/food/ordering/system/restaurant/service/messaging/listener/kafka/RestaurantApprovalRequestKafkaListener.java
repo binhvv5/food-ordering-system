@@ -1,5 +1,6 @@
 package org.food.ordering.system.restaurant.service.messaging.listener.kafka;
 
+import lombok.RequiredArgsConstructor;
 import org.food.ordering.system.kafka.consumer.KafkaConsumer;
 import org.food.ordering.system.kafka.order.avro.model.RestaurantApprovalRequestAvroModel;
 import org.food.ordering.system.restaurant.service.domain.exception.RestaurantApplicationServiceException;
@@ -20,18 +21,12 @@ import java.util.List;
 
 @Slf4j
 @Component
+@RequiredArgsConstructor
 public class RestaurantApprovalRequestKafkaListener implements KafkaConsumer<RestaurantApprovalRequestAvroModel> {
 
     private final RestaurantApprovalRequestMessageListener restaurantApprovalRequestMessageListener;
     private final RestaurantMessagingDataMapper restaurantMessagingDataMapper;
 
-    public RestaurantApprovalRequestKafkaListener(RestaurantApprovalRequestMessageListener
-                                                          restaurantApprovalRequestMessageListener,
-                                                  RestaurantMessagingDataMapper
-                                                          restaurantMessagingDataMapper) {
-        this.restaurantApprovalRequestMessageListener = restaurantApprovalRequestMessageListener;
-        this.restaurantMessagingDataMapper = restaurantMessagingDataMapper;
-    }
 
     @Override
     @KafkaListener(id = "${kafka-consumer-config.restaurant-approval-consumer-group-id}",

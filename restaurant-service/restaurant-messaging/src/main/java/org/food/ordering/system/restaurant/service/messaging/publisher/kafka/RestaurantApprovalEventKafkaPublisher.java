@@ -25,16 +25,6 @@ public class RestaurantApprovalEventKafkaPublisher implements RestaurantApproval
     private final RestaurantServiceConfigData restaurantServiceConfigData;
     private final KafkaMessageHelper kafkaMessageHelper;
 
-    public RestaurantApprovalEventKafkaPublisher(RestaurantMessagingDataMapper dataMapper,
-                                                 KafkaProducer<String, RestaurantApprovalResponseAvroModel>
-                                                         kafkaProducer,
-                                                 RestaurantServiceConfigData restaurantServiceConfigData,
-                                                 KafkaMessageHelper kafkaMessageHelper) {
-        this.restaurantMessagingDataMapper = dataMapper;
-        this.kafkaProducer = kafkaProducer;
-        this.restaurantServiceConfigData = restaurantServiceConfigData;
-        this.kafkaMessageHelper = kafkaMessageHelper;
-    }
 
 
     @Override
