@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.food.ordering.system.restaurant.service.dataaccess.restaurant.mapper.RestaurantDataAccessMapper;
 import org.food.ordering.system.restaurant.service.dataaccess.restaurant.repository.OrderApprovalJpaRepository;
 import org.food.ordering.system.restaurant.service.domain.entity.OrderApproval;
-import org.food.ordering.system.restaurant.service.domain.ports.ouput.repository.OrderApprovalRepository;
+import org.food.ordering.system.restaurant.service.domain.ports.output.repository.OrderApprovalRepository;
 import org.springframework.stereotype.Component;
 
 @Component

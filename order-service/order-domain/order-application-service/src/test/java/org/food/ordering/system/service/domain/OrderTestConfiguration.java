@@ -2,15 +2,25 @@ package org.food.ordering.system.service.domain;
 
 import org.food.ordering.system.order.service.domain.OrderDomainService;
 import org.food.ordering.system.order.service.domain.OrderDomainServiceImpl;
-import org.food.ordering.system.order.service.domain.ports.output.repository.CustomerRepository;
-import org.food.ordering.system.order.service.domain.ports.output.repository.OrderRepository;
-import org.food.ordering.system.order.service.domain.ports.output.repository.RestaurantRepository;
+import org.food.ordering.system.order.service.domain.ports.output.message.publisher.payment.PaymentRequestMessagePublisher;
+import org.food.ordering.system.order.service.domain.ports.output.message.publisher.restaurantapproval.RestaurantApprovalRequestMessagePublisher;
+import org.food.ordering.system.order.service.domain.ports.output.repository.*;
 import org.mockito.Mockito;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication(scanBasePackages = "org.food.ordering.system")
 public class OrderTestConfiguration {
+    @Bean
+    public PaymentRequestMessagePublisher paymentRequestMessagePublisher() {
+        return Mockito.mock(PaymentRequestMessagePublisher.class);
+    }
+
+    @Bean
+    public RestaurantApprovalRequestMessagePublisher restaurantApprovalRequestMessagePublisher() {
+        return Mockito.mock(RestaurantApprovalRequestMessagePublisher.class);
+    }
+
     @Bean
     public OrderRepository orderRepository() {
         return Mockito.mock(OrderRepository.class);
@@ -27,7 +37,18 @@ public class OrderTestConfiguration {
     }
 
     @Bean
+    public PaymentOutboxRepository paymentOutboxRepository() {
+        return Mockito.mock(PaymentOutboxRepository.class);
+    }
+
+    @Bean
+    public ApprovalOutboxRepository approvalOutboxRepository() {
+        return Mockito.mock(ApprovalOutboxRepository.class);
+    }
+
+    @Bean
     public OrderDomainService orderDomainService() {
         return new OrderDomainServiceImpl();
     }
+
 }

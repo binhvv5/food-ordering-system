@@ -9,10 +9,8 @@ import org.food.ordering.system.restaurant.service.domain.event.OrderApprovalEve
 import org.food.ordering.system.restaurant.service.domain.exception.RestaurantNotFoundException;
 import org.food.ordering.system.restaurant.service.domain.mapper.RestaurantDataMapper;
 import lombok.extern.slf4j.Slf4j;
-import org.food.ordering.system.restaurant.service.domain.ports.ouput.message.publisher.OrderApprovedMessagePublisher;
-import org.food.ordering.system.restaurant.service.domain.ports.ouput.message.publisher.OrderRejectedMessagePublisher;
-import org.food.ordering.system.restaurant.service.domain.ports.ouput.repository.OrderApprovalRepository;
-import org.food.ordering.system.restaurant.service.domain.ports.ouput.repository.RestaurantRepository;
+import org.food.ordering.system.restaurant.service.domain.ports.output.repository.OrderApprovalRepository;
+import org.food.ordering.system.restaurant.service.domain.ports.output.repository.RestaurantRepository;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -30,8 +28,6 @@ public class RestaurantApprovalRequestHelper {
     private final RestaurantDataMapper restaurantDataMapper;
     private final RestaurantRepository restaurantRepository;
     private final OrderApprovalRepository orderApprovalRepository;
-    private final OrderApprovedMessagePublisher orderApprovedMessagePublisher;
-    private final OrderRejectedMessagePublisher orderRejectedMessagePublisher;
 
     @Transactional
     public OrderApprovalEvent persistOrderApproval(RestaurantApprovalRequest restaurantApprovalRequest) {
@@ -41,7 +37,7 @@ public class RestaurantApprovalRequestHelper {
         OrderApprovalEvent orderApprovalEvent =
                 restaurantDomainService.validateOrder(
                         restaurant,
-                        failureMessages, orderApprovedMessagePublisher, orderRejectedMessagePublisher);
+                        failureMessages);
         orderApprovalRepository.save(restaurant.getOrderApproval());
         return orderApprovalEvent;
     }
