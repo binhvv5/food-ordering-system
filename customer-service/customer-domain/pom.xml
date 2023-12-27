@@ -4,20 +4,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.food.ordering.system</groupId>
-        <artifactId>food-ordering-system</artifactId>
+        <groupId>org.food.ordering.system.customer.service</groupId>
+        <artifactId>customer-service</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>org.food.ordering.system.customer.service</groupId>
-    <artifactId>customer-service</artifactId>
+    <groupId>org.food.ordering.system</groupId>
+    <artifactId>customer-domain</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>customer-container</module>
-        <module>customer-application</module>
-        <module>customer-dataaccess</module>
-        <module>customer-messaging</module>
-        <module>customer-domain</module>
+        <module>customer-domain-core</module>
+        <module>customer-application-service</module>
     </modules>
+
 
 </project>

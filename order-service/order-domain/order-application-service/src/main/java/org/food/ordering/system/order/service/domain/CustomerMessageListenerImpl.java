@@ -1,5 +1,6 @@
 package org.food.ordering.system.order.service.domain;
 
+import lombok.RequiredArgsConstructor;
 import org.food.ordering.system.order.service.domain.dto.message.CustomerModel;
 import org.food.ordering.system.order.service.domain.entity.Customer;
 import org.food.ordering.system.order.service.domain.exception.OrderDomainException;
@@ -11,15 +12,12 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
+@RequiredArgsConstructor
 public class CustomerMessageListenerImpl implements CustomerMessageListener {
 
     private final CustomerRepository customerRepository;
     private final OrderDataMapper orderDataMapper;
 
-    public CustomerMessageListenerImpl(CustomerRepository customerRepository, OrderDataMapper orderDataMapper) {
-        this.customerRepository = customerRepository;
-        this.orderDataMapper = orderDataMapper;
-    }
 
     @Override
     public void customerCreated(CustomerModel customerModel) {
